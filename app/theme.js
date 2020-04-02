@@ -5,6 +5,7 @@ var theme = queryParams.theme || window.localStorage.getItem('mumble.theme')
 var themes = {
   'MetroMumbleLight': 'MetroMumbleLight',
   'MetroMumbleDark': 'MetroMumbleDark',
+  'Framasoft': 'Framasoft',
   'light': 'MetroMumbleLight',
   'dark': 'MetroMumbleDark'
 }
@@ -19,6 +20,10 @@ var [loadingTheme, mainTheme] = {
   'MetroMumbleDark': [
     require('../themes/MetroMumbleDark/loading.scss'),
     require('../themes/MetroMumbleDark/main.scss')
+  ],
+  'Framasoft': [
+    require('../themes/Framasoft/loading.scss'),
+    require('../themes/Framasoft/main.scss')
   ]
 }[theme]
 
