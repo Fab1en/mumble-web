@@ -21,7 +21,7 @@
   </head>
   <body>
     <div class="loading-container" data-bind="css: { loaded: true }">
-      <div class="loading-circle" data-bind="css: { loaded: true }"></div>
+      <div class="loading-circle" data-bind="css: { loaded: true }"><div></div><div><div></div></div></div>
     </div>
     <div id="container" style="display: none" data-bind="visible: true,
                                                          css: { minimal: minimalView }">
@@ -60,7 +60,7 @@
               <ul data-bind="foreach: thisUser().channel().users()" style="text-align: left">
                 <li>
                   <span data-bind="{text: name, style: {fontWeight: name() == $parent.thisUser().name() ? 'bold': 'normal'}}"></span>
-                  <div data-bind="{class: talking, text: talking}" class="talking"></div>
+                  <div data-bind="class: talking" class="talking"><div><div data-bind="text: talking"></div><div></div></div></div>
                 </li>
               </ul>
               <button class="dialog-submit" data-bind="click: connectDialog.hide">Interface complète</button>

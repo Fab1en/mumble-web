@@ -1,3 +1,4 @@
+$primary: #6a5687 !default
 $black: #000 !default
 $darkgray: #888 !default
 $gray: #a9a9a9 !default
@@ -28,15 +29,15 @@ $toolbar-hover-border-color: $gray !default
 $toolbar-active-bg-color: $white !default
 $toolbar-active-border-color: $toolbar-hover-bg-color !default
 $toolbar-divider-color: $lightgray !default
-$dialog-header-color: $white !default
-$dialog-header-bg-color: $darkgray !default
-$dialog-header-border-bottom-color: $gray !default
+$dialog-header-color: $black !default
+$dialog-header-bg-color: transparent !default
+$dialog-header-border-bottom-color: transparent !default
 $dialog-bg-color: $bg-color !default
 $dialog-border-color: $white !default
 $dialog-color: $font-color !default
-$dialog-button-border-color: $darkgray !default
-$dialog-button-bg-color: $white !default
-$dialog-button-color: $dialog-color !default
+$dialog-button-border-color: transparent !default
+$dialog-button-bg-color: $primary !default
+$dialog-button-color: $white !default
 $dialog-input-border-color: $darkgray !default
 $dialog-input-bg-color: $white !default
 $dialog-input-color: $dialog-color !default
@@ -364,13 +365,14 @@ form {
   filter: grayscale(100%);
 }
 .dialog-header {
-  height: 20px;
   width: calc(100% - 10px);
   padding: 5px;
   text-align: center;
   color: $dialog-header-color;
   background-color: $dialog-header-bg-color;
   border-bottom: 1px solid $dialog-header-border-bottom-color;
+  font-size: 2em;
+  margin: 0.5em 0;
 }
 .dialog-footer {
   width: calc(100% - 20px);
@@ -380,13 +382,17 @@ form {
   float: right;
 }
 .dialog-close, .dialog-submit {
-  width: 45%;
-  font-size: 15px;
+  width: auto;
+  font-size: 20px;
   border: 1px $dialog-button-border-color solid;
-  border-radius: 3px;
+  border-radius: 2em;
   background-color: $dialog-button-bg-color;
   color: $dialog-button-color;
-  padding: 1px;
+  padding: 0.5em 1em;
+}
+.dialog-close:disabled, .dialog-submit:disabled {
+  background-color: $lightgray;
+  color: $font-disabled-color;
 }
 .connect-dialog table {
   text-align: center;
@@ -418,7 +424,6 @@ form {
 }
 .startup-dialog {
   width: 50%;
-  height: 50%;
   min-width: 400px;
   min-height: 250px;
 }
@@ -471,6 +476,22 @@ form {
 .startup-dialog fieldset {
   padding: 1em;
   margin: 2em;
+  border: none;
+  text-align: center;
+}
+.startup-dialog legend {
+  inline-size: 100%;
+}
+.startup-dialog label {
+  font-size: 1.2em;
+}
+.startup-dialog label > input {
+  border: none;
+  margin: 2em 0;
+  border-bottom: solid 1px $lightgray;
+}
+.startup-dialog label > input:focus {
+  border-bottom: solid 3px $primary;
 }
 .connect-dialog input[type=text], select {
   font-size: 15px;
